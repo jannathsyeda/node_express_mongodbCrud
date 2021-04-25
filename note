@@ -1,0 +1,60 @@
+All command-
+
+1. npm init
+2. npm install express --save (express doc,getting started ,api ref 4.x)
+3. npm install -g nodemon(not every time will run npm index,one time have to give command npm index run,then autometically run)
+4.npm install cros (documet link https://expressjs.com/en/resources/middleware/cors.html)
+5.npm install body-parser(http://expressjs.com/en/resources/middleware/body-parser.html)
+
+
+*expess ref api (docs)
+var express = require('express')
+var app = express()
+
+
+*cors 
+var cors = require('cors')
+
+* add in index.js code-
+const express = require('express');
+const app = express();
+
+app.get('/',(req,res)=>{
+    res.send("I know how to open Node...YAY")
+})
+
+app.listen(4200,()=>console.log('Listening to port 4200'));
+
+
+
+*for git repo ,1st create .gitignore file and wright node_modules/
+then create rep and normally push
+
+
+
+
+*package.json file-
+"scripts":
+{ 
+"start":"nodemon index",
+
+}
+
+
+compulsory at index.js
+const express = require('express');
+ const cors = require('cors');
+ const bodyParser = require('body-parser');
+
+const app = express();
+app.use(cors());
+app.use(bodyParser.json());
+
+// app.get('/',(req,res)=>{
+//     res.send("I know how to open Node...YAY")
+// })
+app.listen(3000,()=>console.log('Listening to port 3000'));
+
+http://expressjs.com/en/resources/middleware/body-parser.html
+app.use(bodyParser.urlencoded({ extended: false }));
+for form body parser
